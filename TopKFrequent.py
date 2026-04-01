@@ -3,14 +3,14 @@ import heapq
 
 class Solution:
 
-    #O(n + mlogm)
+    # O(n + mlogm)
     def topKFrequentSort(self, nums: List[int], k: int) -> List[int]:
         count = {}
         for i in nums:
             count[i] = 1 + count.get(i, 0)
         return sorted(count, key=count.get, reverse=True)[:k]
 
-    #O(nlogk)
+    # O(nlogk)
     # neetcode.io min heap solution
     def topKFrequentMinHeap(self, nums: List[int], k: int) -> List[int]:
         count = {}
